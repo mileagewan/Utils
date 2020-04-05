@@ -41,3 +41,7 @@ P_TO_S.publish('test')
 | emitAsync     | 等于 publishAsync  | ---                             | ---                   |
 | end           | 等于 destroy       | ---                             | ---                   |
 | endTarget     | 等于 destroyTarget | ---                             | ---                   |
+
+### GitHub
+
+https://github.com/mileagewan/Utils
