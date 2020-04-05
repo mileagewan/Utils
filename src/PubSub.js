@@ -20,7 +20,7 @@ export class PubSub extends BaseClass {
       const events = this.messages[message];
       if (Object.keys(events).length === 0) {
         // eslint-disable-next-line func-names
-        return function () {};
+        return function() {};
       }
       // eslint-disable-next-line no-restricted-syntax
       for (const key in events) {
@@ -30,7 +30,7 @@ export class PubSub extends BaseClass {
         }
       }
       // eslint-disable-next-line func-names
-      return function () {
+      return function() {
         // eslint-disable-next-line no-restricted-syntax
         for (const values of eventLoop) {
           values();
@@ -161,6 +161,10 @@ export class PubSub extends BaseClass {
    */
   static endTarget(message, target) {
     return this.destroyTarget(message, target);
+  }
+
+  static nextStep(fn) {
+    fn();
   }
 }
 
