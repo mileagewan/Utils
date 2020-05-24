@@ -1,4 +1,3 @@
-
 export class BaseClass {
   static newInstance() {
     if (!this.BeanContent) {
@@ -6,9 +5,17 @@ export class BaseClass {
     }
     return BaseClass();
   }
+
+  static newInstanceById(id) {
+    if (!this.BeanContentById[id]) {
+      this.BeanContentById[id] = new this(id);
+    }
+    return this.BeanContentById[id];
+  }
 }
 
-BaseClass.BeanContent = {};
+BaseClass.BeanContent = null;
+BaseClass.BeanContentById = {};
 export default {
-  BaseClass
+  BaseClass,
 };
